@@ -41,7 +41,7 @@
 --For instance, if a user whose first login date is on 3 March 2022, we assume that they had previously logged in during the year 2021. Although the data for their previous logins is not present in the user_logins table, we consider these users as reactivated users.
 --As of Aug 4th, 2023, we have carefully reviewed the feedback received and made necessary updates to the solution.
 
-
+CREATE VIEW user_id_solution AS 
 SELECT *
 FROM user_ids AS curr_month -- 1
 WHERE NOT EXISTS (
