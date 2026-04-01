@@ -13,10 +13,18 @@
 
 --INSERT INTO user_ids (user_id,login_date )
 --values(123,	'02/22/2022 12:00:00'),
---		(112,	'03/15/2022 12:00:00'),
---		(245,	'03/28/2022 12:00:00'),
---		(123,	'05/01/2022 12:00:00'),
---		(725,	'05/25/2022 12:00:00');
+--(725,	'2022-03-03 12:00:00'),
+--(245,	'2022-03-28 12:00:00'),
+--(112,	'2022-03-05 12:00:00'),
+--(245,	'2022-04-29 12:00:00'),
+--(123,	'2022-05-01 12:00:00'),
+--(245,	'2022-05-05 12:00:00'),
+--(725,	'2022-05-25 12:00:00'),
+--(311,	'2022-06-06 12:00:00'),
+--(112,	'2022-06-07 12:00:00'),
+--(123,	'2022-02-22 12:00:00'),
+--(112,	'2022-03-15 12:00:00'),
+--(245,	'2022-07-25 12:00:00');
 
 
 --This is the same question as problem #31 in the SQL Chapter of Ace the Data Science Interview!
@@ -40,10 +48,11 @@ WHERE NOT EXISTS (
   SELECT * 
   FROM user_ids AS last_month -- 2
   WHERE DATEPART(Month,last_month.login_date) = 
-    DATEPART(Month,DATEADD(month,1, login_date))) -- 3
+    DATEPART(Month,DATEADD(month,1, curr_month.login_date))) -- 3
 
 
---SELECT 
---    DATEADD(month,1, login_date),
---    login_date
---FROM user_ids
+
+
+
+
+
